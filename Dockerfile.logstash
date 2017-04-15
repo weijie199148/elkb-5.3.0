@@ -1,0 +1,11 @@
+FROM elkbase:jdk-8 
+MAINTAINER qinglong siriaodao@vip.qq.com
+VOLUME [ "/opt/product/data/" ]
+ADD ./elk /opt/product/
+ADD ./script/logstash.sh /root/
+RUN chmod +x /root/logstash.sh
+EXPOSE 5044
+EXPOSE 4560
+EXPOSE 8080 
+ENTRYPOINT ["/root/logstash.sh"]
+CMD ["/usr/sbin/init"]

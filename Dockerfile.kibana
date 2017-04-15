@@ -1,0 +1,9 @@
+FROM elkbase:jdk-8 
+MAINTAINER qinglong siriaodao@vip.qq.com
+VOLUME [ "/opt/product/data/" ]
+ADD ./elk /opt/product/
+ADD ./script/kibana.sh /root/
+RUN chmod +x /root/kibana.sh
+EXPOSE 5601
+ENTRYPOINT ["/root/kibana.sh"]
+CMD ["/usr/sbin/init"]
