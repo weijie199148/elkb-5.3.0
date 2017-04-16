@@ -1,8 +1,9 @@
 FROM elkbase:jdk-8 
 MAINTAINER qinglong siriaodao@vip.qq.com
 VOLUME [ "/opt/product/data/" ]
-ADD ./elk /opt/product/
-RUN useradd elk && chown -R elk:elk /opt/product/elasticsearch-5.3.0
+ADD ./elk/elasticsearch-5.3.0 /opt/product/elasticsearch
+ADD ./config/elasticsearch.yml /opt/product/elasticsearch/config/elasticsearch.yml
+RUN useradd elk && chown -R elk:elk /opt/product/elasticsearch
 ADD ./script/elasticsearch.sh /root/
 RUN chmod +x /root/elasticsearch.sh
 EXPOSE 9200

@@ -5,12 +5,9 @@ echo "* soft nproc 2048" > /etc/security/limits.conf
 echo "* hard nproc 4096" > /etc/security/limits.conf
 echo "vm.max_map_count=655360" > /etc/sysctl.conf 
 sysctl -p
-cd /opt/product/elasticsearch-5.3.0/config/
-rm -rf elasticsearch.yml
-cp /opt/product/data/elk/elasticsearch.yml .
-chown -R elk:elk /opt/product/elasticsearch-5.3.0
+chown -R elk:elk /opt/product/elasticsearch
 chown -R elk:elk /opt/product/data/elk/elasticsearchdata
 su - elk <<!
 export JAVA_HOME=/opt/product/tools/jdk1.8.0_121
 export PATH=$JAVA_HOME/bin:$PATH
-/opt/product/elasticsearch-5.3.0/bin/elasticsearch
+/opt/product/elasticsearch/bin/elasticsearch

@@ -9,6 +9,10 @@ mkdir -p /opt/product/data/elk/{elasticsearchdata,filebeatdata,kibanadata,logsta
 mkdir -p /opt/product/elk
 
 docker build -f Dockerfile.elasticsearch -t elasticsearch:v1.0 ./
+
 docker build -f Dockerfile.logstash -t logstash:v1.0 ./
+
 docker build -f Dockerfile.kibana -t kibana:v1.0 ./
+
 docker build -f Dockerfile.filebeat -t filebeat:v1.0 ./
+
