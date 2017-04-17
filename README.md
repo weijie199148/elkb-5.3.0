@@ -14,6 +14,8 @@
 
 运行以下命令即可获得docker镜像
 
+docker build -f Dockerfile.base -t elkbase:jdk-8 ./
+
 docker build -f Dockerfile.elasticsearch -t elasticsearch:v1.0 ./
 
 docker build -f Dockerfile.logstash -t logstash:v1.0 ./
