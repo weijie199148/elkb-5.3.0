@@ -12,7 +12,7 @@
 
 下载jdk1.8.0_121，解压到 /opt/product/tools下
 
-config下配置按自己需求更改，注意更新自己的IP地下
+config下配置按自己需求更改，注意更新自己的IP地址
 
 创建应用日志目录: mkdir -p /opt/product/data/elk/{elasticsearchdata,filebeatdata,kibanadata,logstashdata}
 
